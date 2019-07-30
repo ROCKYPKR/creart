@@ -1,5 +1,4 @@
 import 'package:creartfinal/about.dart';
-import 'package:creartfinal/carrears.dart';
 import 'package:creartfinal/client.dart';
 import 'package:creartfinal/skills/contact.dart';
 import 'package:creartfinal/skills/skillux.dart';
@@ -19,6 +18,7 @@ class New extends StatefulWidget {
 
 class _NewState extends State<New> {
   final List images = [
+    'https://creart.in/wp-content/uploads/2019/07/creart-website-shopify.png',
     'https://creart.in/wp-content/uploads/2018/11/creart-website-hero-banner-05-1.png',
     'https://creart.in/wp-content/uploads/2017/07/02.png',
     'https://creart.in/wp-content/uploads/2016/04/2.png',
@@ -26,8 +26,8 @@ class _NewState extends State<New> {
     'https://creart.in/wp-content/uploads/2017/07/04.png',
     'https://creart.in/wp-content/uploads/2016/04/3.png',
     'https://creart.in/wp-content/uploads/2017/07/01.png',
-    'https://creart.in/wp-content/uploads/2019/07/creart-website-shopify.png',
-    'https://i.ibb.co/PzfY07D/flutter.jpg'
+    'https://i.ibb.co/PzfY07D/flutter.jpg',
+    'https://creart.in/wp-content/uploads/2019/07/creart-website-shopifyv2.png'
   ];
 
   // String currentProfilePic =
@@ -54,69 +54,22 @@ class _NewState extends State<New> {
                           "https://backgrounddownload.com/wp-content/uploads/2018/09/navigation-drawer-header-background-image-3.jpg"),
                       fit: BoxFit.fill)),
             ),
-            new ListTile(
-                trailing: new Image(
-                  height: 50,
-                  width: 50,
-                  image: NetworkImage(
-                      "http://www.sclance.com/images/clients/Clients_1262646.png"),
-                ),
-                title: new Text(
-                  "Clients",
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(new MaterialPageRoute(
-                      builder: (BuildContext context) => Client()));
-                }),
-            new Divider(),
-            //new
-            new ListTile(
-                trailing: new Image(
-                  height: 40,
-                  width: 50,
-                  image: NetworkImage(
-                      "http://cdn.onlinewebfonts.com/svg/img_16801.png"),
-                ),
-                title: new Text(
-                  "PortFolio",
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(new MaterialPageRoute(
-                      builder: (BuildContext context) => Client()));
-                }),
-            new Divider(),
-            //About
-            new ListTile(
-                trailing: new Image(
-                  height: 50,
-                  width: 50,
-                  image: NetworkImage(
-                      "http://www.sclance.com/pngs/about-icon-png/about_icon_png_12645.png"),
-                ),
-                title: new Text(
-                  "About",
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(new MaterialPageRoute(
-                      builder: (BuildContext context) => About()));
-                }),
-            new Divider(),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                // This line code will close drawer programatically....
+                Navigator.pop(context);
+              },
+            ),
+            Divider(
+              height: 2.0,
+            ),
           ],
         ),
       ),
       appBar: AppBar(
+        elevation: 4.0,
         iconTheme: new IconThemeData(color: Colors.black),
         title: Text(
           "Home",
@@ -279,14 +232,13 @@ class _NewState extends State<New> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          Contact()));
+                                      builder: (context) => Contact()));
                             },
                             child: Container(
                                 height: 140,
                                 width: 300,
                                 child: Image.network(
-                                  "https://img.pngio.com/welcome-to-traineeship-traineeship-office-png-site-1000_600.png",
+                                  "http://www.qsekinternational.com/images/publicLimitedCompany.png",
                                   fit: BoxFit.cover,
                                 )),
                           ),

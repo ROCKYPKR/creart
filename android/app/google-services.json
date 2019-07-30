@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "459649853885",
+    "firebase_url": "https://creart-ff289.firebaseio.com",
+    "project_id": "creart-ff289",
+    "storage_bucket": "creart-ff289.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459649853885:android:92da473321ea9950",
+        "android_client_info": {
+          "package_name": "com.example.creartfinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459649853885-k78a4s0re7nc387k3g9e3n680vjgkrds.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.creartfinal",
+            "certificate_hash": "8618dfd9cc4478cdc49bde97490b4d722a92b9be"
+          }
+        },
+        {
+          "client_id": "459649853885-2dnh84vbqkegs8ruutr7ned8v0t1cobv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlvjg2zD1dTt-_H69-TCY0fTMpBqm35uE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459649853885-2dnh84vbqkegs8ruutr7ned8v0t1cobv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

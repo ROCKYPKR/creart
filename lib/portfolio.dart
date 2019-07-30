@@ -1,3 +1,4 @@
+import 'package:creartfinal/portfolio/mobileapp.dart';
 import 'package:flutter/material.dart';
 
 class Portfolio extends StatelessWidget {
@@ -5,6 +6,7 @@ class Portfolio extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         title: Text("PortFolio"),
         leading: Icon(Icons.arrow_back_ios),
         actions: <Widget>[
@@ -21,56 +23,68 @@ class Portfolio extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Container(
-                  height: 180,
-                  width: MediaQuery.of(context).size.width * 0.44,
-                  child: Card(
-                    elevation: 12.0,
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      side: new BorderSide(color: Colors.blue, width: 2.0),
-                    ),
-                    child: Column(
-                      children: <Widget>[
-                        Image.network(
-                          "https://www.pixicart.com/images/graphic-design.png",
-                          fit: BoxFit.cover,
-                        ),
-                        Text(
-                          "Logo & Branding",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
-                        )
-                      ],
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MobileApp()));
+                  },
+                  child: Container(
+                    height: 180,
+                    width: MediaQuery.of(context).size.width * 0.44,
+                    child: Card(
+                      elevation: 12.0,
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        side: new BorderSide(color: Colors.blue, width: 2.0),
+                      ),
+                      child: Column(
+                        children: <Widget>[
+                          Image.network(
+                            "https://www.pixicart.com/images/graphic-design.png",
+                            fit: BoxFit.cover,
+                          ),
+                          Text(
+                            "Logo & Branding",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
-                Container(
-                  height: 180,
-                  width: MediaQuery.of(context).size.width * 0.44,
-                  child: Card(
-                    elevation: 12.0,
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      side: new BorderSide(color: Colors.blue, width: 2.0),
-                    ),
-                    child: Column(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Image.network(
-                            "https://www.sccpre.cat/mypng/full/152-1528122_mobile-app-development-android.png",
-                            fit: BoxFit.cover,
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MobileApp()));
+                  },
+                  child: Container(
+                    height: 180,
+                    width: MediaQuery.of(context).size.width * 0.44,
+                    child: Card(
+                      elevation: 12.0,
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        side: new BorderSide(color: Colors.blue, width: 2.0),
+                      ),
+                      child: Column(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Image.network(
+                              "https://www.sccpre.cat/mypng/full/152-1528122_mobile-app-development-android.png",
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Mobile Apps",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
-                        )
-                      ],
+                          Text(
+                            "Mobile Apps",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
