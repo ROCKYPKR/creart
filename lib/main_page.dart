@@ -1,6 +1,8 @@
-import 'package:creartfinal/about.dart';
-import 'package:creartfinal/client.dart';
 import 'package:creartfinal/skills/contact.dart';
+import 'package:creartfinal/skills/skill_arvr.dart';
+import 'package:creartfinal/skills/skill_digital.dart';
+import 'package:creartfinal/skills/skill_embedded.dart';
+import 'package:creartfinal/skills/skillai.dart';
 import 'package:creartfinal/skills/skillux.dart';
 import 'package:creartfinal/skills/skillweb.dart';
 import 'package:creartfinal/skills/skill.dart';
@@ -51,12 +53,43 @@ class _NewState extends State<New> {
               decoration: new BoxDecoration(
                   image: new DecorationImage(
                       image: new NetworkImage(
-                          "https://backgrounddownload.com/wp-content/uploads/2018/09/navigation-drawer-header-background-image-3.jpg"),
+                          "https://miro.medium.com/max/1200/1*l3wujEgEKOecwVzf_dqVrQ.jpeg"),
                       fit: BoxFit.fill)),
             ),
+            InkWell(
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Contact()));
+              },
+              child: ListTile(
+                leading: Icon(
+                  Icons.contact_phone,
+                  size: 28,
+                  color: Colors.black87,
+                ),
+                title: Text(
+                  'Contact',
+                  style: TextStyle(fontSize: 18),
+                ),
+                onTap: () {
+                  // This line code will close drawer programatically....
+                  Navigator.pop(context);
+                },
+              ),
+            ),
+            Divider(
+              height: 2.0,
+            ),
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Home'),
+              leading: Icon(
+                Icons.question_answer,
+                size: 28,
+                color: Colors.black87,
+              ),
+              title: Text(
+                'Enquiry',
+                style: TextStyle(fontSize: 18),
+              ),
               onTap: () {
                 // This line code will close drawer programatically....
                 Navigator.pop(context);
@@ -156,8 +189,10 @@ class _NewState extends State<New> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Skill()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SkillAi()));
                         },
                         child: Nikhil(
                             Colors.blue[300],
@@ -165,21 +200,45 @@ class _NewState extends State<New> {
                             "Android & iOS Apps, Web Services,",
                             "https://i1.wp.com/www.devicebits.com/wp-content/uploads/2017/03/support-predict-icon.png"),
                       ),
-                      Nikhil(
-                          Colors.yellow[600],
-                          "Embedded \nSystem",
-                          "Raspberry PI, Arduino, IOT, Helath Care Equipment,",
-                          "http://gaianconsultants.com/img/icons/EmbeddedSystems/embedded-system-and-hardware-engineering.png"),
-                      Nikhil(
-                          Colors.pink[300],
-                          "AR / VR",
-                          "Augmented Reality & Virtual Reality",
-                          "https://www.simulanis.com/img/VR.png"),
-                      Nikhil(
-                          Colors.blueGrey,
-                          "Digital & Offline\nMarketting",
-                          "SMM, SEO, SMO,",
-                          "https://www.6degreesit.com/wp-content/uploads/2019/02/Social-Media-Marketing.png"),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SkillEmb()));
+                        },
+                        child: Nikhil(
+                            Colors.yellow[600],
+                            "Embedded \nSystem",
+                            "Raspberry PI, Arduino, IOT, Helath Care Equipment,",
+                            "http://gaianconsultants.com/img/icons/EmbeddedSystems/embedded-system-and-hardware-engineering.png"),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SkillArVr()));
+                        },
+                        child: Nikhil(
+                            Colors.pink[300],
+                            "AR / VR",
+                            "Augmented Reality & Virtual Reality",
+                            "https://www.simulanis.com/img/VR.png"),
+                      ),
+                      InkWell(
+                        onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SkillDigital()));
+                        },
+                        child: Nikhil(
+                            Colors.blueGrey,
+                            "Digital & Offline\nMarketting",
+                            "SMM, SEO, SMO,",
+                            "https://www.6degreesit.com/wp-content/uploads/2019/02/Social-Media-Marketing.png"),
+                      ),
                     ],
                   ),
                 ),

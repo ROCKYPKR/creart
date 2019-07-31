@@ -1,15 +1,26 @@
 import 'package:creartfinal/about.dart';
 import 'package:creartfinal/carrears.dart';
 import 'package:creartfinal/portfolio.dart';
-
+import 'package:advanced_splashscreen/advanced_splashscreen.dart';
 import 'main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'client.dart';
 
 void main() => runApp(MaterialApp(
+  home: AdvancedSplashScreen(
+    appTitle: "CreArt Solutions",
+      child: BottomNavBar(),
+      seconds: 2,
+      colorList: [
+        Color(0xff9bcebb),
+        Color(0xff9bceff),
+        Color(0xff9bcfff),
+      ],
+      appIcon: "assets/logo.png",
+    ),
       debugShowCheckedModeBanner: true,
-      home: BottomNavBar(),
+     // home: BottomNavBar(),
       title: "CreArt Solutions",
       theme: ThemeData(
         primarySwatch: Colors.blue,

@@ -344,6 +344,7 @@ Future<bool> infoDialog(context) async {
     }).catchError((e) => print(e));
   }
 
+
   return showDialog(
       barrierDismissible: true,
       context: context,
