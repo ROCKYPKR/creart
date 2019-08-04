@@ -56,26 +56,21 @@ class _NewState extends State<New> {
                           "https://miro.medium.com/max/1200/1*l3wujEgEKOecwVzf_dqVrQ.jpeg"),
                       fit: BoxFit.fill)),
             ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Contact()));
-              },
-              child: ListTile(
-                leading: Icon(
-                  Icons.contact_phone,
-                  size: 28,
-                  color: Colors.black87,
-                ),
-                title: Text(
-                  'Contact',
-                  style: TextStyle(fontSize: 18),
-                ),
-                onTap: () {
-                  // This line code will close drawer programatically....
-                  Navigator.pop(context);
-                },
+            ListTile(
+              leading: Icon(
+                Icons.contact_phone,
+                size: 28,
+                color: Colors.blue,
               ),
+              title: Text(
+                'Contact',
+                style: TextStyle(fontSize: 18),
+              ),
+              onTap: () {
+                // This line code will close drawer programatically....
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Contact()));
+              },
             ),
             Divider(
               height: 2.0,
@@ -84,7 +79,7 @@ class _NewState extends State<New> {
               leading: Icon(
                 Icons.question_answer,
                 size: 28,
-                color: Colors.black87,
+                color: Colors.green,
               ),
               title: Text(
                 'Enquiry',
@@ -92,8 +87,15 @@ class _NewState extends State<New> {
               ),
               onTap: () {
                 // This line code will close drawer programatically....
-                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Contact()));
               },
+            ),
+            Divider(
+              height: 2.0,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.4,
             ),
             Divider(
               height: 2.0,
@@ -228,7 +230,7 @@ class _NewState extends State<New> {
                       ),
                       InkWell(
                         onTap: () {
-                            Navigator.push(
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => SkillDigital()));

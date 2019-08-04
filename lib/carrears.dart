@@ -328,22 +328,19 @@ Future<bool> infoDialog(context) async {
   TextEditingController _textFieldController4 = TextEditingController();
 
   void _add() {
-    final DocumentReference documentReference =
-        Firestore.instance.document("myData/carrers");
-
     Map<String, String> data = <String, String>{
       "Name": _textFieldController.text,
       "Email": _textFieldController1.text,
-      "MobileNo" : _textFieldController2.text,
-      "Intrest" : _textFieldController3.text,
-      "Message" : _textFieldController4.text
-
+      "MobileNo": _textFieldController2.text,
+      "Intrest": _textFieldController3.text,
+      "Message": _textFieldController4.text
     };
-    documentReference.setData(data).whenComplete(() {
+
+    Firestore.instance.collection("myData").add(data).whenComplete(() {
       print("Document Added");
+      Navigator.of(context).pop();
     }).catchError((e) => print(e));
   }
-
 
   return showDialog(
       barrierDismissible: true,
