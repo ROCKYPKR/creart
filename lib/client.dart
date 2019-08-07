@@ -58,20 +58,17 @@ class Client extends StatelessWidget {
               ClientBox(
                   "https://educationiconnect.com/wp-content/uploads/2018/03/Calorx-Teacher%E2%80%99s-University-Fee-Structure.jpg",
                   "https://creart.in/wp-content/uploads/2018/09/Brokersnet.png"),
-                   ClientBox(
+              ClientBox(
                   "https://creart.in/wp-content/uploads/2017/11/Artboard-23-100-1.jpg",
                   "https://creart.in/wp-content/uploads/2017/11/Artboard-39-100-1.jpg"),
-                   ClientBox(
+              ClientBox(
                   "https://creart.in/wp-content/uploads/2017/11/Artboard-2-100-1.jpg",
                   "https://creart.in/wp-content/uploads/2017/11/Artboard-45-100-1.jpg"),
 
-
-
-
-                   ClientBox(
+              ClientBox(
                   "https://creart.in/wp-content/uploads/2017/11/Artboard-47-100.jpg",
                   "https://creart.in/wp-content/uploads/2017/11/Artboard-16-100.jpg"),
-                   ClientBox(
+              ClientBox(
                   "https://creart.in/wp-content/uploads/2017/11/Artboard-14-100.jpg",
                   "https://creart.in/wp-content/uploads/2017/11/Artboard-7-100-1.jpg"),
             ],
@@ -83,45 +80,48 @@ class Client extends StatelessWidget {
 }
 
 Widget ClientBox(var link1, var link2) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: <Widget>[
-      Padding(
-        padding: const EdgeInsets.only(left: 24, top: 12, bottom: 12),
-        child: Container(
-          height: 170,
-          width: 170,
-          child: Card(
-            elevation: 4.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
-              side: new BorderSide(color: Colors.black, width: 2.0),
-            ),
-            child: Image.network(
-              link1,
-              fit: BoxFit.contain,
-            ),
-          ),
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.only(right: 24, top: 12, bottom: 12),
-        child: Container(
-          height: 170,
-          width: 170,
-          child: Card(
-            elevation: 4.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
-              side: new BorderSide(color: Colors.black, width: 2.0),
-            ),
-            child: Image.network(
-              link2,
-              fit: BoxFit.contain,
+  return SingleChildScrollView(
+    scrollDirection: Axis.horizontal,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(left: 24, top: 12, bottom: 12),
+          child: Container(
+            height: 170,
+            width: 170,
+            child: Card(
+              elevation: 4.0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                side: new BorderSide(color: Colors.black, width: 2.0),
+              ),
+              child: Image.network(
+                link1,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
         ),
-      ),
-    ],
+        Padding(
+          padding: const EdgeInsets.only(right: 24, top: 12, bottom: 12),
+          child: Container(
+            height: 170,
+            width: 170,
+            child: Card(
+              elevation: 4.0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                side: new BorderSide(color: Colors.black, width: 2.0),
+              ),
+              child: Image.network(
+                link2,
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+        ),
+      ],
+    ),
   );
 }

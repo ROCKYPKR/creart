@@ -8,19 +8,19 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'client.dart';
 
 void main() => runApp(MaterialApp(
-  home: AdvancedSplashScreen(
-    appTitle: "CreArt Solutions",
-      child: BottomNavBar(),
-      seconds: 2,
-      colorList: [
-        Color(0xff9bcebb),
-        Color(0xff9bceff),
-        Color(0xff9bcfff),
-      ],
-      appIcon: "assets/logo.png",
-    ),
+      home: AdvancedSplashScreen(
+        appTitle: "CreArt Solutions",
+        child: BottomNavBar(),
+        seconds: 2,
+        colorList: [
+          Color(0xff9bcebb),
+          Color(0xff9bceff),
+          Color(0xff9bcfff),
+        ],
+        appIcon: "assets/logo.png",
+      ),
       debugShowCheckedModeBanner: true,
-     // home: BottomNavBar(),
+      // home: BottomNavBar(),
       title: "CreArt Solutions",
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -51,10 +51,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
         height: 50.0,
         items: <Widget>[
           Icon(Icons.home, size: 30),
-          Icon(Icons.list, size: 30),
-          Icon(Icons.compare_arrows, size: 30),
-          Icon(Icons.call_split, size: 30),
-          Icon(Icons.perm_identity, size: 30),
+          Icon(Icons.view_list, size: 30),
+          Icon(Icons.work, size: 30),
+          Icon(Icons.card_membership, size: 30),
+          Icon(Icons.person, size: 30),
         ],
         color: Color(0xFFf0f1f0),
         buttonBackgroundColor: Colors.white,
@@ -70,6 +70,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
       body: _getPage(_page),
     );
   }
+
+
 }
 
 _getPage(int page) {

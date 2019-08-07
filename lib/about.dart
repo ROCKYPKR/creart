@@ -55,12 +55,14 @@ class _AboutState extends State<About> {
                       height: 10,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 180, top: 20),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      //padding: const EdgeInsets.only(right: 180, top: 20),
                       child: Text(
                         "About Us",
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 35,
+                            fontSize: 30,
                             fontWeight: FontWeight.bold),
                       ),
                     ),

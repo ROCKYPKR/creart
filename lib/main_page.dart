@@ -1,3 +1,4 @@
+import 'package:creartfinal/interview/interview.dart';
 import 'package:creartfinal/skills/contact.dart';
 import 'package:creartfinal/skills/skill_arvr.dart';
 import 'package:creartfinal/skills/skill_digital.dart';
@@ -12,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:share/share.dart';
 
 class New extends StatefulWidget {
   @override
@@ -94,11 +96,48 @@ class _NewState extends State<New> {
             Divider(
               height: 2.0,
             ),
+            ListTile(
+              leading: Icon(
+                Icons.video_call,
+                size: 28,
+                color: Colors.blue,
+              ),
+              title: Text(
+                'Interview',
+                style: TextStyle(fontSize: 18),
+              ),
+              onTap: () {
+                // This line code will close drawer programatically....
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Interview()));
+              },
+            ),
+            Divider(
+              height: 2.0,
+            ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.4,
             ),
             Divider(
               height: 2.0,
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.share,
+                size: 28,
+                color: Colors.blueGrey,
+              ),
+              title: Text(
+                'Share',
+                style: TextStyle(fontSize: 18),
+              ),
+              onTap: () {
+                // This line code will close drawer programatically....
+                final RenderBox box = context.findRenderObject();
+                Share.share("www.creart.in",
+                    sharePositionOrigin:
+                        box.localToGlobal(Offset.zero) & box.size);
+              },
             ),
           ],
         ),
