@@ -33,8 +33,7 @@ dependencies:
   firebase_storage: ^3.0.5
   advanced_splashscreen: ^0.0.1
   share: ^0.6.2+1
-  agora_rtc_engine: ^0.9.8
-  permission_handler: ^3.2.1+1
+  cached_network_image: ^1.1.1
 
 
 dev_dependencies:

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class MobileApp extends StatelessWidget {
@@ -45,7 +46,8 @@ class MobileApp extends StatelessWidget {
               ].map((String url) {
                 return Card(
                   child: new GridTile(
-                      child: new Image.network(url, fit: BoxFit.cover)),
+                      child: new CachedNetworkImage(imageUrl: url,
+                placeholder: (context, url) => new CircularProgressIndicator(), fit: BoxFit.cover)),
                 );
               }).toList()),
         ));

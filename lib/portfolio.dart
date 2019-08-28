@@ -1,5 +1,6 @@
 import 'package:creartfinal/portfolio/mobileapp.dart';
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class Portfolio extends StatelessWidget {
   @override
@@ -41,8 +42,9 @@ class Portfolio extends StatelessWidget {
                         ),
                         child: Column(
                           children: <Widget>[
-                            Image.network(
-                              "https://www.pixicart.com/images/graphic-design.png",
+                            CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:       "https://www.pixicart.com/images/graphic-design.png",
                               fit: BoxFit.cover,
                             ),
                             Text(
@@ -74,8 +76,9 @@ class Portfolio extends StatelessWidget {
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.all(20.0),
-                              child: Image.network(
-                                "https://www.sccpre.cat/mypng/full/152-1528122_mobile-app-development-android.png",
+                              child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:         "https://www.sccpre.cat/mypng/full/152-1528122_mobile-app-development-android.png",
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -109,8 +112,9 @@ class Portfolio extends StatelessWidget {
                       ),
                       child: Column(
                         children: <Widget>[
-                          Image.network(
-                            "http://alliedpropertygroup.net/wp-content/uploads/2016/04/Community-Websites-PNG.png",
+                          CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:     "http://alliedpropertygroup.net/wp-content/uploads/2016/04/Community-Websites-PNG.png",
                             fit: BoxFit.cover,
                           ),
                           Text(
@@ -136,8 +140,9 @@ class Portfolio extends StatelessWidget {
                         children: <Widget>[
                           Padding(
                             padding: const EdgeInsets.all(15),
-                            child: Image.network(
-                              "https://www.coussins.co.uk/wp-content/uploads/2018/05/social-media-icon-collage.png",
+                            child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:       "https://www.coussins.co.uk/wp-content/uploads/2018/05/social-media-icon-collage.png",
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -173,8 +178,9 @@ class Portfolio extends StatelessWidget {
                       ),
                       child: Column(
                         children: <Widget>[
-                          Image.network(
-                            "https://learn.libraryjournal.com/wp-content/uploads/2018/08/LJPD_OnlineCourse_ARVR_Logo-01.png",
+                          CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:     "https://learn.libraryjournal.com/wp-content/uploads/2018/08/LJPD_OnlineCourse_ARVR_Logo-01.png",
                             fit: BoxFit.cover,
                           ),
                           Text(
@@ -200,8 +206,9 @@ class Portfolio extends StatelessWidget {
                         children: <Widget>[
                           Padding(
                             padding: const EdgeInsets.all(14),
-                            child: Image.network(
-                              "https://www.pngkey.com/png/detail/801-8019155_cinematic-hd-video-production-hd-production-video.png",
+                            child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:       "https://www.pngkey.com/png/detail/801-8019155_cinematic-hd-video-production-hd-production-video.png",
                               fit: BoxFit.cover,
                             ),
                           ),

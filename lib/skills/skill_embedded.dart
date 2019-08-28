@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:creartfinal/characcter.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class SkillEmb extends StatelessWidget {
   @override
@@ -77,8 +78,9 @@ class SkillEmb extends StatelessWidget {
                         alignment: Alignment(0, -0.6),
                         child: Hero(
                           tag: "image-{$characters[0].name}",
-                          child: Image.network(
-                            "https://3.imimg.com/data3/CQ/LA/MY-2201247/embedded-systems-500x500.png",
+                          child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:     "https://3.imimg.com/data3/CQ/LA/MY-2201247/embedded-systems-500x500.png",
                             height: screenHeight * 0.55,
                           ),
                         ),

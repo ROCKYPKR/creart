@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:creartfinal/characcter.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class SkillArVr extends StatelessWidget {
   @override
@@ -77,8 +78,9 @@ class SkillArVr extends StatelessWidget {
                         alignment: Alignment(0, -0.6),
                         child: Hero(
                           tag: "image-{$characters[0].name}",
-                          child: Image.network(
-                            "https://www.structurus.com/wp-content/uploads/2018/01/mid-girl.png",
+                          child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:     "https://www.structurus.com/wp-content/uploads/2018/01/mid-girl.png",
                             height: screenHeight * 0.55,
                           ),
                         ),

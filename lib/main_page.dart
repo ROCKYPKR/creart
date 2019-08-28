@@ -1,4 +1,5 @@
-import 'package:creartfinal/interview/interview.dart';
+import 'package:creartfinal/carrears.dart';
+import 'package:creartfinal/skill_list.dart';
 import 'package:creartfinal/skills/contact.dart';
 import 'package:creartfinal/skills/skill_arvr.dart';
 import 'package:creartfinal/skills/skill_digital.dart';
@@ -7,7 +8,7 @@ import 'package:creartfinal/skills/skillai.dart';
 import 'package:creartfinal/skills/skillux.dart';
 import 'package:creartfinal/skills/skillweb.dart';
 import 'package:creartfinal/skills/skill.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
 import 'skills/skill.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -89,8 +90,7 @@ class _NewState extends State<New> {
               ),
               onTap: () {
                 // This line code will close drawer programatically....
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Contact()));
+                infoDialog(context);
               },
             ),
             Divider(
@@ -98,18 +98,18 @@ class _NewState extends State<New> {
             ),
             ListTile(
               leading: Icon(
-                Icons.video_call,
+                Icons.chrome_reader_mode,
                 size: 28,
-                color: Colors.blue,
+                color: Colors.orangeAccent,
               ),
               title: Text(
-                'Interview',
+                'Skills List',
                 style: TextStyle(fontSize: 18),
               ),
               onTap: () {
                 // This line code will close drawer programatically....
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Interview()));
+                    MaterialPageRoute(builder: (context) => SkillList()));
               },
             ),
             Divider(
@@ -161,8 +161,10 @@ class _NewState extends State<New> {
               new Swiper(
                 autoplay: true,
                 itemBuilder: (BuildContext context, int index) {
-                  return new Image.network(
-                    images[index],
+                  return new CachedNetworkImage(
+                    placeholder: (context, url) =>
+                        new CircularProgressIndicator(),
+                    imageUrl: images[index],
                     fit: BoxFit.fill,
                   );
                 },
@@ -337,8 +339,11 @@ class _NewState extends State<New> {
                             child: Container(
                                 height: 140,
                                 width: 300,
-                                child: Image.network(
-                                  "http://www.qsekinternational.com/images/publicLimitedCompany.png",
+                                child: CachedNetworkImage(
+                                  placeholder: (context, url) =>
+                                      new CircularProgressIndicator(),
+                                  imageUrl:
+                                      "http://www.qsekinternational.com/images/publicLimitedCompany.png",
                                   fit: BoxFit.cover,
                                 )),
                           ),
@@ -420,7 +425,10 @@ Widget Nikhil(var color, var tittle, var desc, var imgurl) {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8),
-            child: Image.network(imgurl),
+            child: CachedNetworkImage(
+              imageUrl: imgurl,
+              placeholder: (context, url) => new CircularProgressIndicator(),
+            ),
           )
         ],
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class About extends StatefulWidget {
   @override
@@ -46,8 +47,9 @@ class _AboutState extends State<About> {
                     ),
                     Container(
                       height: 180,
-                      child: Image.network(
-                        'https://i.ibb.co/8XkbGMS/creart-logo-png.png',
+                      child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl: 'https://i.ibb.co/8XkbGMS/creart-logo-png.png',
                         fit: BoxFit.contain,
                       ),
                     ),
@@ -133,8 +135,9 @@ class _AboutState extends State<About> {
                                                 borderRadius:
                                                     BorderRadius.circular(
                                                         10.0)),
-                                            child: Image.network(
-                                                "http://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19751.png"),
+                                            child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:                         "http://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19751.png"),
                                           ),
                                         ),
                                       ),
@@ -146,8 +149,9 @@ class _AboutState extends State<About> {
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(10.0)),
-                                          child: Image.network(
-                                            "http://pluspng.com/img-png/instagram-vector-png--626.jpg",
+                                          child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:                     "http://pluspng.com/img-png/instagram-vector-png--626.jpg",
                                             fit: BoxFit.contain,
                                           ),
                                         ),
@@ -163,8 +167,9 @@ class _AboutState extends State<About> {
                                                 borderRadius:
                                                     BorderRadius.circular(
                                                         10.0)),
-                                            child: Image.network(
-                                                "http://pluspng.com/img-png/twitter-logo-png-twitter-logo-vector-png-clipart-library-518.png"),
+                                            child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:                         "http://pluspng.com/img-png/twitter-logo-png-twitter-logo-vector-png-clipart-library-518.png"),
                                           ),
                                         ),
                                       ),
@@ -193,8 +198,9 @@ class _AboutState extends State<About> {
                                                 borderRadius:
                                                     BorderRadius.circular(
                                                         10.0)),
-                                            child: Image.network(
-                                                "https://pngimg.com/uploads/linkedIn/linkedIn_PNG9.png"),
+                                            child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:                         "https://pngimg.com/uploads/linkedIn/linkedIn_PNG9.png"),
                                           ),
                                         ),
                                       ),
@@ -209,8 +215,9 @@ class _AboutState extends State<About> {
                                                 borderRadius:
                                                     BorderRadius.circular(
                                                         10.0)),
-                                            child: Image.network(
-                                                "http://pngimg.com/uploads/youtube/youtube_PNG15.png"),
+                                            child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:                         "http://pngimg.com/uploads/youtube/youtube_PNG15.png"),
                                           ),
                                         ),
                                       )

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class Careears extends StatefulWidget {
   @override
@@ -192,8 +193,10 @@ Widget Nikhil(var imgmain, var tittle, var subtittle, var subtittle1, var exp,
                     child: Container(
                         height: 100,
                         width: 100,
-                        child: Image.network(
-                          imgmain,
+                        child: CachedNetworkImage(
+                          placeholder: (context, url) =>
+                              new CircularProgressIndicator(),
+                          imageUrl: imgmain,
                           fit: BoxFit.cover,
                         )),
                   ),
@@ -270,7 +273,7 @@ Widget Nikhil(var imgmain, var tittle, var subtittle, var subtittle1, var exp,
                     infoDialog(context);
                   },
                   child: Text(
-                    "Applay Now",
+                    "Apply Now",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -295,17 +298,23 @@ Widget Nikhil(var imgmain, var tittle, var subtittle, var subtittle1, var exp,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Container(
-                          height: 120, width: 120, child: Image.network(img1)),
+                          height: 120,
+                          width: 120,
+                          child: CachedNetworkImage(imageUrl: img1)),
                       SizedBox(
                         width: 5,
                       ),
                       Container(
-                          height: 120, width: 120, child: Image.network(img2)),
+                          height: 120,
+                          width: 120,
+                          child: CachedNetworkImage(imageUrl: img2)),
                       SizedBox(
                         width: 5,
                       ),
                       Container(
-                          height: 120, width: 120, child: Image.network(img3)),
+                          height: 120,
+                          width: 120,
+                          child: CachedNetworkImage(imageUrl: img3)),
                     ],
                   ),
                 ),

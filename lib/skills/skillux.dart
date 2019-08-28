@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:creartfinal/characcter.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class SkillUx extends StatelessWidget {
   @override
@@ -77,8 +78,9 @@ class SkillUx extends StatelessWidget {
                         alignment: Alignment(0, -0.6),
                         child: Hero(
                           tag: "image-{$characters[0].name}",
-                          child: Image.network(
-                            "https://pngimage.net/wp-content/uploads/2018/06/ui-logo-png-4.png",
+                          child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:     "https://pngimage.net/wp-content/uploads/2018/06/ui-logo-png-4.png",
                             height: screenHeight * 0.55,
                           ),
                         ),

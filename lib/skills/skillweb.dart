@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:creartfinal/characcter.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class SkillWeb extends StatelessWidget {
   @override
@@ -77,8 +78,9 @@ class SkillWeb extends StatelessWidget {
                         alignment: Alignment(0, -0.6),
                         child: Hero(
                           tag: "image-{$characters[0].name}",
-                          child: Image.network(
-                            "http://pluspng.com/img-png/louisville-website-design-565.png",
+                          child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:     "http://pluspng.com/img-png/louisville-website-design-565.png",
                             height: screenHeight * 0.55,
                           ),
                         ),

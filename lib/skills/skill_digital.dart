@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:creartfinal/characcter.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class SkillDigital extends StatelessWidget {
   @override
@@ -77,8 +78,9 @@ class SkillDigital extends StatelessWidget {
                         alignment: Alignment(0, -0.6),
                         child: Hero(
                           tag: "image-{$characters[0].name}",
-                          child: Image.network(
-                            "https://www.lyfemarketing.com/blog/wp-content/uploads/2018/02/types-of-digital-marketing-title.png",
+                          child: CachedNetworkImage(
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                    imageUrl:     "https://www.lyfemarketing.com/blog/wp-content/uploads/2018/02/types-of-digital-marketing-title.png",
                             height: screenHeight * 0.55,
                           ),
                         ),

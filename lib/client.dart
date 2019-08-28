@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class Client extends StatelessWidget {
@@ -96,8 +97,8 @@ Widget ClientBox(var link1, var link2) {
                 borderRadius: BorderRadius.circular(10.0),
                 side: new BorderSide(color: Colors.black, width: 2.0),
               ),
-              child: Image.network(
-                link1,
+              child: CachedNetworkImage(imageUrl: link1,
+                placeholder: (context, url) => new CircularProgressIndicator(),
                 fit: BoxFit.contain,
               ),
             ),
@@ -114,8 +115,9 @@ Widget ClientBox(var link1, var link2) {
                 borderRadius: BorderRadius.circular(10.0),
                 side: new BorderSide(color: Colors.black, width: 2.0),
               ),
-              child: Image.network(
-                link2,
+              child: CachedNetworkImage(
+                placeholder: (context, url) => new CircularProgressIndicator(),
+                imageUrl: link2,
                 fit: BoxFit.contain,
               ),
             ),
